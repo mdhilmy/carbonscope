@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "sources": ["EPA eGRID 2022", "IEA 2023", "Regional authorities"],
+    "lastUpdated": "2024-01"
+  },
+  "US": {
+    "national": {
+      "factor": 0.373,
+      "unit": "kgCO2/kWh",
+      "year": 2022,
+      "source": "EPA eGRID"
+    },
+    "subregions": {
+      "AKGD": { "factor": 0.448, "name": "ASCC Alaska Grid" },
+      "AKMS": { "factor": 0.263, "name": "ASCC Miscellaneous" },
+      "AZNM": { "factor": 0.394, "name": "WECC Southwest" },
+      "CAMX": { "factor": 0.226, "name": "WECC California" },
+      "ERCT": { "factor": 0.370, "name": "ERCOT All (Texas)" },
+      "FRCC": { "factor": 0.374, "name": "FRCC All (Florida)" },
+      "HIMS": { "factor": 0.519, "name": "HICC Miscellaneous" },
+      "HIOA": { "factor": 0.649, "name": "HICC Oahu" },
+      "MROE": { "factor": 0.489, "name": "MRO East" },
+      "MROW": { "factor": 0.449, "name": "MRO West" },
+      "NEWE": { "factor": 0.206, "name": "NPCC New England" },
+      "NWPP": { "factor": 0.278, "name": "WECC Northwest" },
+      "NYCW": { "factor": 0.218, "name": "NPCC NYC/Westchester" },
+      "NYLI": { "factor": 0.436, "name": "NPCC Long Island" },
+      "NYUP": { "factor": 0.114, "name": "NPCC Upstate NY" },
+      "PRMS": { "factor": 0.499, "name": "Puerto Rico" },
+      "RFCE": { "factor": 0.289, "name": "RFC East" },
+      "RFCM": { "factor": 0.501, "name": "RFC Michigan" },
+      "RFCW": { "factor": 0.445, "name": "RFC West" },
+      "RMPA": { "factor": 0.465, "name": "WECC Rockies" },
+      "SPNO": { "factor": 0.382, "name": "SPP North" },
+      "SPSO": { "factor": 0.398, "name": "SPP South" },
+      "SRMV": { "factor": 0.345, "name": "SERC Mississippi Valley" },
+      "SRMW": { "factor": 0.622, "name": "SERC Midwest" },
+      "SRSO": { "factor": 0.371, "name": "SERC South" },
+      "SRTV": { "factor": 0.404, "name": "SERC Tennessee Valley" },
+      "SRVC": { "factor": 0.293, "name": "SERC Virginia/Carolina" }
+    }
+  },
+  "GB": {
+    "factor": 0.212,
+    "unit": "kgCO2/kWh",
+    "year": 2024,
+    "source": "UK DESNZ",
+    "apiAvailable": true
+  },
+  "DE": {
+    "factor": 0.380,
+    "unit": "kgCO2/kWh",
+    "year": 2023,
+    "source": "UBA Germany"
+  },
+  "FR": {
+    "factor": 0.052,
+    "unit": "kgCO2/kWh",
+    "year": 2023,
+    "source": "RTE France"
+  },
+  "ES": {
+    "factor": 0.144,
+    "unit": "kgCO2/kWh",
+    "year": 2023,
+    "source": "REE Spain"
+  },
+  "IT": {
+    "factor": 0.265,
+    "unit": "kgCO2/kWh",
+    "year": 2023,
+    "source": "ISPRA Italy"
+  },
+  "NL": {
+    "factor": 0.376,
+    "unit": "kgCO2/kWh",
+    "year": 2023,
+    "source": "CBS Netherlands"
+  },
+  "MY": {
+    "peninsular": {
+      "factor": 0.774,
+      "unit": "tCO2e/MWh",
+      "year": 2022,
+      "name": "Peninsular Malaysia"
+    },
+    "sabah": {
+      "factor": 0.531,
+      "unit": "tCO2e/MWh",
+      "year": 2022,
+      "name": "Sabah"
+    },
+    "sarawak": {
+      "factor": 0.199,
+      "unit": "tCO2e/MWh",
+      "year": 2022,
+      "name": "Sarawak"
+    },
+    "source": "Malaysia Energy Commission"
+  },
+  "SG": {
+    "factor": 0.402,
+    "unit": "kgCO2/kWh",
+    "year": 2023,
+    "source": "EMA Singapore"
+  },
+  "AU": {
+    "national": {
+      "factor": 0.680,
+      "unit": "kgCO2e/kWh",
+      "year": 2023,
+      "source": "Clean Energy Regulator"
+    },
+    "states": {
+      "NSW": { "factor": 0.680, "name": "New South Wales" },
+      "VIC": { "factor": 0.790, "name": "Victoria" },
+      "QLD": { "factor": 0.730, "name": "Queensland" },
+      "SA": { "factor": 0.300, "name": "South Australia" },
+      "WA": { "factor": 0.540, "name": "Western Australia" },
+      "TAS": { "factor": 0.130, "name": "Tasmania" },
+      "NT": { "factor": 0.540, "name": "Northern Territory" }
+    }
+  },
+  "AE": {
+    "factor": 0.450,
+    "unit": "kgCO2/kWh",
+    "year": 2023,
+    "source": "UAE Ministry of Energy"
+  },
+  "SA": {
+    "factor": 0.520,
+    "unit": "kgCO2/kWh",
+    "year": 2023,
+    "source": "ECRA Saudi Arabia"
+  },
+  "QA": {
+    "factor": 0.480,
+    "unit": "kgCO2/kWh",
+    "year": 2023,
+    "source": "Qatar General Electricity"
+  },
+  "KW": {
+    "factor": 0.560,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "OM": {
+    "factor": 0.510,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "BH": {
+    "factor": 0.540,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "BR": {
+    "factor": 0.085,
+    "unit": "tCO2/MWh",
+    "year": 2023,
+    "source": "MCTI Brazil"
+  },
+  "CA": {
+    "national": { "factor": 0.120, "unit": "kgCO2/kWh" },
+    "provinces": {
+      "AB": { "factor": 0.530, "name": "Alberta" },
+      "BC": { "factor": 0.015, "name": "British Columbia" },
+      "ON": { "factor": 0.030, "name": "Ontario" },
+      "QC": { "factor": 0.002, "name": "Quebec" },
+      "SK": { "factor": 0.650, "name": "Saskatchewan" }
+    }
+  },
+  "MX": {
+    "factor": 0.423,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "NO": {
+    "factor": 0.017,
+    "unit": "kgCO2/kWh",
+    "year": 2023,
+    "source": "NVE Norway"
+  },
+  "SE": {
+    "factor": 0.045,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "DK": {
+    "factor": 0.166,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "PL": {
+    "factor": 0.707,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "IN": {
+    "factor": 0.708,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "CN": {
+    "factor": 0.555,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "JP": {
+    "factor": 0.457,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "KR": {
+    "factor": 0.417,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "ZA": {
+    "factor": 0.950,
+    "unit": "kgCO2/kWh",
+    "year": 2023,
+    "source": "Eskom South Africa"
+  },
+  "NG": {
+    "factor": 0.410,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  },
+  "EG": {
+    "factor": 0.450,
+    "unit": "kgCO2/kWh",
+    "year": 2023
+  }
+}

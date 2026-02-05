@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source": "EPA Protocol for Equipment Leak Emission Estimates",
+    "methodology": "Average Emission Factor Approach",
+    "lastUpdated": "2024"
+  },
+  "gasService": {
+    "valve": {
+      "factor": 0.0268,
+      "unit": "lb THC/hr/component",
+      "description": "Gas valves"
+    },
+    "pumpSeal": {
+      "factor": 0.0199,
+      "unit": "lb THC/hr/component",
+      "description": "Pump seals in gas service"
+    },
+    "compressorSeal": {
+      "factor": 0.636,
+      "unit": "lb THC/hr/component",
+      "description": "Compressor seals"
+    },
+    "pressureReliefValve": {
+      "factor": 0.0447,
+      "unit": "lb THC/hr/component",
+      "description": "Pressure relief valves"
+    },
+    "connector": {
+      "factor": 0.00183,
+      "unit": "lb THC/hr/component",
+      "description": "Connectors and flanges"
+    },
+    "openEndedLine": {
+      "factor": 0.0023,
+      "unit": "lb THC/hr/component",
+      "description": "Open-ended lines"
+    },
+    "samplingConnection": {
+      "factor": 0.0150,
+      "unit": "lb THC/hr/component",
+      "description": "Sampling connections"
+    }
+  },
+  "lightLiquid": {
+    "valve": {
+      "factor": 0.0109,
+      "unit": "lb THC/hr/component",
+      "description": "Light liquid valves"
+    },
+    "pumpSeal": {
+      "factor": 0.0862,
+      "unit": "lb THC/hr/component",
+      "description": "Pump seals in light liquid service"
+    },
+    "connector": {
+      "factor": 0.00183,
+      "unit": "lb THC/hr/component",
+      "description": "Connectors in light liquid service"
+    },
+    "openEndedLine": {
+      "factor": 0.0017,
+      "unit": "lb THC/hr/component",
+      "description": "Open-ended lines"
+    }
+  },
+  "heavyLiquid": {
+    "valve": {
+      "factor": 0.00023,
+      "unit": "lb THC/hr/component",
+      "description": "Heavy liquid valves"
+    },
+    "pumpSeal": {
+      "factor": 0.0216,
+      "unit": "lb THC/hr/component",
+      "description": "Pump seals in heavy liquid service"
+    },
+    "connector": {
+      "factor": 0.00006,
+      "unit": "lb THC/hr/component",
+      "description": "Connectors in heavy liquid service"
+    }
+  },
+  "conversionFactors": {
+    "hoursPerYear": 8760,
+    "lbToKg": 0.453592,
+    "methaneInTHC_gasService": 0.60,
+    "methaneInTHC_liquidService": 0.40,
+    "description": "Standard conversion factors for annual calculations"
+  }
+}

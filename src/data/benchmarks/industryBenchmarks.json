@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "sources": ["OGCI", "IPIECA", "IEA", "Company disclosures"],
+    "lastUpdated": "2024"
+  },
+  "carbonIntensity": {
+    "unit": "kgCO2e/BOE",
+    "description": "Carbon intensity per barrel of oil equivalent",
+    "industryAverage": {
+      "upstream": 18.5,
+      "integrated": 25.0,
+      "downstream": 45.0
+    },
+    "quartiles": {
+      "top25": { "upstream": 12, "integrated": 18, "downstream": 35 },
+      "median": { "upstream": 18, "integrated": 25, "downstream": 45 },
+      "bottom25": { "upstream": 28, "integrated": 35, "downstream": 60 }
+    },
+    "bestInClass": {
+      "upstream": 8,
+      "integrated": 12
+    }
+  },
+  "methaneIntensity": {
+    "unit": "percent",
+    "description": "Methane emissions as percentage of natural gas production",
+    "targets": {
+      "OGCI_2025": 0.20,
+      "OGCI_2030": 0.10,
+      "OGMP2_Gold": 0.15,
+      "NetZero2050": 0.05
+    },
+    "currentIndustry": {
+      "average": 0.23,
+      "topPerformers": 0.08,
+      "laggards": 0.50
+    }
+  },
+  "flaringIntensity": {
+    "unit": "m³/BOE",
+    "description": "Flared gas volume per barrel of oil equivalent",
+    "worldBankZRF": {
+      "target2030": 0,
+      "description": "Zero Routine Flaring by 2030"
+    },
+    "currentIndustry": {
+      "globalAverage": 2.5,
+      "northAmerica": 1.8,
+      "middleEast": 3.2,
+      "russia": 8.5,
+      "africa": 4.2
+    }
+  },
+  "scope3Ratio": {
+    "description": "Typical Scope 3 as percentage of total emissions",
+    "upstream": {
+      "category11Percent": 85,
+      "otherScope3Percent": 5,
+      "scope1and2Percent": 10
+    },
+    "integrated": {
+      "category11Percent": 80,
+      "otherScope3Percent": 8,
+      "scope1and2Percent": 12
+    },
+    "midstream": {
+      "category11Percent": 40,
+      "otherScope3Percent": 15,
+      "scope1and2Percent": 45
+    }
+  },
+  "netZeroTargets": {
+    "description": "Major O&G company net-zero commitments",
+    "companies": {
+      "BP": { "scope1and2": 2050, "scope3": 2050, "interim2030": "-35-40%" },
+      "Shell": { "scope1and2": 2050, "scope3": 2050, "interim2030": "-30%" },
+      "TotalEnergies": { "scope1and2": 2050, "scope3": 2050, "interim2030": "-30%" },
+      "Equinor": { "scope1and2": 2050, "scope3": 2050, "interim2030": "-50%" },
+      "Eni": { "scope1and2": 2050, "scope3": 2050, "interim2030": "-35%" }
+    }
+  },
+  "regulatoryBenchmarks": {
+    "EPA_GHGRP_Average": {
+      "refineries": 1800000,
+      "unit": "tCO2e/facility/year",
+      "description": "Average reported emissions for petroleum refineries"
+    },
+    "EU_ETS_Average": {
+      "refineries": 1200000,
+      "unit": "tCO2/year"
+    }
+  }
+}

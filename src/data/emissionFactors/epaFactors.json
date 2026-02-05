@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "source": "EPA GHG Emission Factors Hub 2024",
+    "url": "https://www.epa.gov/climateleadership",
+    "lastUpdated": "2024-02"
+  },
+  "stationaryCombustion": {
+    "naturalGas": {
+      "co2": 53.06,
+      "ch4": 0.001,
+      "n2o": 0.0001,
+      "unit": "kg/MMBtu",
+      "hhv": 1.028,
+      "hhvUnit": "MMBtu/mcf"
+    },
+    "distillateFuelOil": {
+      "co2": 73.96,
+      "ch4": 0.003,
+      "n2o": 0.0006,
+      "unit": "kg/MMBtu",
+      "hhv": 0.138,
+      "hhvUnit": "MMBtu/gallon"
+    },
+    "residualFuelOil": {
+      "co2": 75.10,
+      "ch4": 0.003,
+      "n2o": 0.0006,
+      "unit": "kg/MMBtu",
+      "hhv": 0.150,
+      "hhvUnit": "MMBtu/gallon"
+    },
+    "crudeOil": {
+      "co2": 74.54,
+      "ch4": 0.003,
+      "n2o": 0.0006,
+      "unit": "kg/MMBtu",
+      "hhv": 0.138,
+      "hhvUnit": "MMBtu/gallon"
+    },
+    "lpg": {
+      "co2": 62.98,
+      "ch4": 0.003,
+      "n2o": 0.0006,
+      "unit": "kg/MMBtu",
+      "hhv": 0.092,
+      "hhvUnit": "MMBtu/gallon"
+    },
+    "motorGasoline": {
+      "co2": 70.22,
+      "ch4": 0.003,
+      "n2o": 0.0006,
+      "unit": "kg/MMBtu",
+      "hhv": 0.125,
+      "hhvUnit": "MMBtu/gallon"
+    },
+    "kerosene": {
+      "co2": 72.22,
+      "ch4": 0.003,
+      "n2o": 0.0006,
+      "unit": "kg/MMBtu",
+      "hhv": 0.135,
+      "hhvUnit": "MMBtu/gallon"
+    },
+    "petroleumCoke": {
+      "co2": 102.41,
+      "ch4": 0.003,
+      "n2o": 0.0006,
+      "unit": "kg/MMBtu"
+    },
+    "propane": {
+      "co2": 62.87,
+      "ch4": 0.003,
+      "n2o": 0.0006,
+      "unit": "kg/MMBtu",
+      "hhv": 0.091,
+      "hhvUnit": "MMBtu/gallon"
+    },
+    "butane": {
+      "co2": 65.15,
+      "ch4": 0.003,
+      "n2o": 0.0006,
+      "unit": "kg/MMBtu",
+      "hhv": 0.103,
+      "hhvUnit": "MMBtu/gallon"
+    }
+  },
+  "mobileCombustion": {
+    "gasolinePassengerCar": {
+      "co2": 8.887,
+      "ch4": 0.000195,
+      "n2o": 0.000089,
+      "unit": "kg/gallon"
+    },
+    "gasolineLightTruck": {
+      "co2": 8.887,
+      "ch4": 0.000397,
+      "n2o": 0.000177,
+      "unit": "kg/gallon"
+    },
+    "dieselHeavyTruck": {
+      "co2": 10.21,
+      "ch4": 0.0051,
+      "n2o": 0.0048,
+      "unit": "kg/gallon"
+    },
+    "dieselEquipment": {
+      "co2": 10.21,
+      "ch4": 0.00097,
+      "n2o": 0.00097,
+      "unit": "kg/gallon"
+    },
+    "jetFuel": {
+      "co2": 9.57,
+      "ch4": 0.000048,
+      "n2o": 0.000021,
+      "unit": "kg/gallon"
+    },
+    "marineDistillate": {
+      "co2": 10.21,
+      "ch4": 0.0097,
+      "n2o": 0.0015,
+      "unit": "kg/gallon"
+    },
+    "marineResidual": {
+      "co2": 11.27,
+      "ch4": 0.0097,
+      "n2o": 0.0015,
+      "unit": "kg/gallon"
+    }
+  },
+  "flaring": {
+    "defaultCO2Factor": 60,
+    "defaultCombustionEfficiency": 0.98,
+    "molarVolumeConversion68F": 849.5,
+    "molarVolumeConversion60F": 836.6,
+    "unit": "kg CO2/MMBtu",
+    "defaultHHV": 1000,
+    "defaultHHVUnit": "MMBtu/MMscf",
+    "methodology": "40 CFR § 98.253"
+  },
+  "fugitiveFactors": {
+    "production": {
+      "onshore": 0.15,
+      "offshore": 0.08,
+      "unit": "kg CH4/BOE"
+    },
+    "gathering": 0.12,
+    "processing": 0.10,
+    "transmission": 0.05,
+    "distribution": 0.08
+  }
+}

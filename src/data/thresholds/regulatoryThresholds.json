@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "lastUpdated": "2024-01",
+    "purpose": "Regulatory reporting thresholds for emissions monitoring"
+  },
+  "US": {
+    "EPA_GHGRP": {
+      "threshold": 25000,
+      "unit": "MT CO2e/year",
+      "requirement": "Mandatory annual reporting",
+      "scope": "Facility-level",
+      "reference": "40 CFR Part 98",
+      "url": "https://www.epa.gov/ghgreporting"
+    },
+    "EPA_SuperEmitter": {
+      "threshold": 100,
+      "unit": "kg CH4/hr",
+      "requirement": "Super-emitter detection and response",
+      "scope": "Equipment-level",
+      "reference": "EPA Methane Emissions Reduction Program",
+      "effective": "2024"
+    },
+    "EPA_NSPS_OOOOb": {
+      "description": "New Source Performance Standards for O&G",
+      "requirements": [
+        "LDAR programs",
+        "Pneumatic controller standards",
+        "Storage vessel controls",
+        "Well completions"
+      ],
+      "reference": "40 CFR Part 60, Subpart OOOOb"
+    }
+  },
+  "Australia": {
+    "NGER_Corporate": {
+      "threshold": 50000,
+      "unit": "t CO2e/year",
+      "requirement": "Mandatory corporate reporting",
+      "scope": "Corporate group",
+      "reference": "National Greenhouse and Energy Reporting Act 2007"
+    },
+    "NGER_Facility": {
+      "threshold": 25000,
+      "unit": "t CO2e/year",
+      "requirement": "Facility-level reporting",
+      "scope": "Individual facility"
+    },
+    "SafeguardMechanism": {
+      "threshold": 100000,
+      "unit": "t CO2e Scope 1/year",
+      "requirement": "Emissions baseline applies",
+      "scope": "Facility-level",
+      "declineRate": "4.9% per year",
+      "reference": "Safeguard Mechanism (Crediting) Amendment Act 2023"
+    }
+  },
+  "EU": {
+    "ETS_Thermal": {
+      "threshold": 20,
+      "unit": "MW thermal input",
+      "requirement": "EU ETS allowance obligation",
+      "scope": "Installation"
+    },
+    "ETS_Direct": {
+      "threshold": 25000,
+      "unit": "t CO2/year",
+      "requirement": "EU ETS reporting",
+      "scope": "Installation"
+    },
+    "CSRD": {
+      "description": "Corporate Sustainability Reporting Directive",
+      "thresholds": {
+        "largeCompanies": {
+          "employees": 250,
+          "revenue": 40000000,
+          "revenueUnit": "EUR",
+          "assets": 20000000
+        }
+      },
+      "requirements": ["ESRS E1 Climate Change", "Scope 1, 2, 3 disclosure"],
+      "effective": "2024 (large companies), 2025 (listed SMEs)"
+    }
+  },
+  "Malaysia": {
+    "BursaMalaysia": {
+      "threshold": 2000000000,
+      "thresholdUnit": "MYR market cap",
+      "requirement": "IFRS S2 aligned disclosure",
+      "scope": "Listed companies",
+      "effective": "FY2025",
+      "reference": "Bursa Malaysia Sustainability Reporting Guide"
+    }
+  },
+  "Singapore": {
+    "SGX": {
+      "requirement": "Mandatory Scope 1 & 2 reporting",
+      "scope": "All listed issuers",
+      "effective": "FY2024",
+      "reference": "SGX Rulebook"
+    },
+    "CarbonTax": {
+      "threshold": 25000,
+      "unit": "t CO2e/year",
+      "rate": 25,
+      "rateUnit": "SGD/t CO2e",
+      "effective": "2024",
+      "plannedRate2030": 50
+    }
+  },
+  "Canada": {
+    "OBPS": {
+      "threshold": 50000,
+      "unit": "t CO2e/year",
+      "requirement": "Output-Based Pricing System",
+      "scope": "Industrial facilities"
+    },
+    "GHGRP": {
+      "threshold": 10000,
+      "unit": "t CO2e/year",
+      "requirement": "Mandatory GHG reporting",
+      "reference": "ECCC GHGRP"
+    }
+  },
+  "UK": {
+    "SECR": {
+      "description": "Streamlined Energy and Carbon Reporting",
+      "requirement": "Annual energy and carbon disclosure",
+      "scope": "Large UK companies",
+      "thresholds": {
+        "employees": 250,
+        "revenue": 36000000,
+        "revenueUnit": "GBP"
+      }
+    },
+    "UKTS": {
+      "description": "UK Emissions Trading Scheme",
+      "threshold": 20,
+      "unit": "MW thermal input",
+      "requirement": "UK ETS allowance obligation"
+    }
+  }
+}

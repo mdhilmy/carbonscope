@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "source": "40 CFR Part 98 Subpart W",
+    "reference": "EPA GHGRP",
+    "lastUpdated": "2024"
+  },
+  "pneumaticControllers": {
+    "highBleedContinuous": {
+      "emissionRate": 37.3,
+      "unit": "scfh",
+      "annualEmissionsMcf": 327,
+      "description": "High-bleed pneumatic controller",
+      "examples": ["Level controllers", "Pressure controllers", "Temperature controllers"]
+    },
+    "lowBleedContinuous": {
+      "emissionRate": 1.39,
+      "unit": "scfh",
+      "annualEmissionsMcf": 12.2,
+      "description": "Low-bleed pneumatic controller",
+      "threshold": "<=6 scfh bleed rate"
+    },
+    "intermittentBleed": {
+      "emissionRate": 13.5,
+      "unit": "scfh",
+      "annualEmissionsMcf": 118,
+      "description": "Intermittent vent pneumatic controller",
+      "examples": ["Snap-acting controllers", "Dump controllers"]
+    }
+  },
+  "pneumaticPumps": {
+    "diaphragmPump": {
+      "emissionRate": 71.7,
+      "unit": "scfh",
+      "annualEmissionsMcf": 628,
+      "description": "Natural gas-driven diaphragm pump"
+    },
+    "pistonPump": {
+      "emissionRate": 34.0,
+      "unit": "scfh",
+      "annualEmissionsMcf": 298,
+      "description": "Natural gas-driven piston pump"
+    }
+  },
+  "gasComposition": {
+    "defaultMethaneContent": 0.86,
+    "defaultCO2Content": 0.01,
+    "defaultN2Content": 0.02,
+    "defaultEthaneContent": 0.05,
+    "defaultPropaneContent": 0.03,
+    "defaultButaneContent": 0.02,
+    "defaultPentanePlusContent": 0.01,
+    "unit": "mole fraction"
+  },
+  "calculationNotes": {
+    "annualHours": 8760,
+    "conversionMcfToKg": "MCF × density × methane fraction × 16/molar volume",
+    "defaultGasDensity": 0.7,
+    "defaultGasDensityUnit": "kg/m³"
+  }
+}

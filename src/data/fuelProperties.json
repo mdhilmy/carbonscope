@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "source": "EPA GHG Emission Factors Hub 2024",
+    "notes": "Higher Heating Values (HHV) for common fuels"
+  },
+  "heatingValues": {
+    "naturalGas": {
+      "hhv": 1.028,
+      "unit": "MMBtu/mcf",
+      "density": 0.8,
+      "densityUnit": "kg/m³",
+      "carbonContent": 0.75,
+      "carbonContentUnit": "kg C/kg fuel"
+    },
+    "distillateFuelOil": {
+      "hhv": 0.138,
+      "unit": "MMBtu/gallon",
+      "hhvPerLiter": 0.0365,
+      "density": 0.84,
+      "densityUnit": "kg/liter",
+      "carbonContent": 0.86
+    },
+    "residualFuelOil": {
+      "hhv": 0.150,
+      "unit": "MMBtu/gallon",
+      "density": 0.95,
+      "densityUnit": "kg/liter",
+      "carbonContent": 0.87
+    },
+    "crudeOil": {
+      "hhv": 0.138,
+      "unit": "MMBtu/gallon",
+      "hhvPerBarrel": 5.8,
+      "hhvPerBarrelUnit": "MMBtu/barrel",
+      "density": 0.85,
+      "densityUnit": "kg/liter",
+      "carbonContent": 0.85
+    },
+    "lpg": {
+      "hhv": 0.092,
+      "unit": "MMBtu/gallon",
+      "density": 0.51,
+      "densityUnit": "kg/liter",
+      "carbonContent": 0.82
+    },
+    "motorGasoline": {
+      "hhv": 0.125,
+      "unit": "MMBtu/gallon",
+      "density": 0.74,
+      "densityUnit": "kg/liter",
+      "carbonContent": 0.85
+    },
+    "kerosene": {
+      "hhv": 0.135,
+      "unit": "MMBtu/gallon",
+      "density": 0.80,
+      "densityUnit": "kg/liter",
+      "carbonContent": 0.86
+    },
+    "jetFuel": {
+      "hhv": 0.135,
+      "unit": "MMBtu/gallon",
+      "density": 0.81,
+      "densityUnit": "kg/liter",
+      "carbonContent": 0.86
+    },
+    "propane": {
+      "hhv": 0.0913,
+      "unit": "MMBtu/gallon",
+      "density": 0.51,
+      "densityUnit": "kg/liter",
+      "carbonContent": 0.82
+    },
+    "butane": {
+      "hhv": 0.1030,
+      "unit": "MMBtu/gallon",
+      "density": 0.58,
+      "densityUnit": "kg/liter",
+      "carbonContent": 0.83
+    },
+    "ethane": {
+      "hhv": 0.0664,
+      "unit": "MMBtu/gallon",
+      "density": 0.37,
+      "densityUnit": "kg/liter",
+      "carbonContent": 0.80
+    }
+  },
+  "unitConversions": {
+    "gallonToLiter": 3.78541,
+    "barrelToGallon": 42,
+    "mcfToScf": 1000,
+    "MMBtuToMJ": 1055.06,
+    "MJToKWh": 0.2778,
+    "lbToKg": 0.453592,
+    "tonneToKg": 1000,
+    "shortTonToTonne": 0.907185
+  },
+  "gasComponents": {
+    "methane": {
+      "formula": "CH4",
+      "molecularWeight": 16.04,
+      "carbonAtoms": 1,
+      "hhv": 1010,
+      "hhvUnit": "Btu/scf"
+    },
+    "ethane": {
+      "formula": "C2H6",
+      "molecularWeight": 30.07,
+      "carbonAtoms": 2,
+      "hhv": 1770,
+      "hhvUnit": "Btu/scf"
+    },
+    "propane": {
+      "formula": "C3H8",
+      "molecularWeight": 44.10,
+      "carbonAtoms": 3,
+      "hhv": 2516,
+      "hhvUnit": "Btu/scf"
+    },
+    "nButane": {
+      "formula": "n-C4H10",
+      "molecularWeight": 58.12,
+      "carbonAtoms": 4,
+      "hhv": 3262,
+      "hhvUnit": "Btu/scf"
+    },
+    "isoButane": {
+      "formula": "i-C4H10",
+      "molecularWeight": 58.12,
+      "carbonAtoms": 4,
+      "hhv": 3252,
+      "hhvUnit": "Btu/scf"
+    },
+    "pentane": {
+      "formula": "C5H12",
+      "molecularWeight": 72.15,
+      "carbonAtoms": 5,
+      "hhv": 4008,
+      "hhvUnit": "Btu/scf"
+    },
+    "carbonDioxide": {
+      "formula": "CO2",
+      "molecularWeight": 44.01,
+      "carbonAtoms": 0,
+      "hhv": 0,
+      "hhvUnit": "Btu/scf"
+    },
+    "nitrogen": {
+      "formula": "N2",
+      "molecularWeight": 28.01,
+      "carbonAtoms": 0,
+      "hhv": 0,
+      "hhvUnit": "Btu/scf"
+    },
+    "hydrogenSulfide": {
+      "formula": "H2S",
+      "molecularWeight": 34.08,
+      "carbonAtoms": 0,
+      "hhv": 637,
+      "hhvUnit": "Btu/scf"
+    }
+  }
+}

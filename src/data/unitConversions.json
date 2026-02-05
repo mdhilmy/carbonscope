@@ -1,0 +1,113 @@
+{
+  "energy": {
+    "MMBtu": {
+      "toMJ": 1055.06,
+      "toKWh": 293.07,
+      "toTherm": 10,
+      "toGJ": 1.055,
+      "toBtu": 1000000
+    },
+    "MJ": {
+      "toMMBtu": 0.000948,
+      "toKWh": 0.2778,
+      "toGJ": 0.001,
+      "toBtu": 947.82
+    },
+    "kWh": {
+      "toMMBtu": 0.003412,
+      "toMJ": 3.6,
+      "toGJ": 0.0036,
+      "toBtu": 3412
+    },
+    "therm": {
+      "toMMBtu": 0.1,
+      "toMJ": 105.506,
+      "toKWh": 29.307
+    },
+    "GJ": {
+      "toMMBtu": 0.9478,
+      "toMJ": 1000,
+      "toKWh": 277.78
+    }
+  },
+  "volume": {
+    "gallon_US": {
+      "toLiter": 3.78541,
+      "toBarrel": 0.02381,
+      "toM3": 0.003785
+    },
+    "liter": {
+      "toGallon": 0.2642,
+      "toBarrel": 0.006293,
+      "toM3": 0.001
+    },
+    "barrel": {
+      "toGallon": 42,
+      "toLiter": 158.99,
+      "toM3": 0.159
+    },
+    "m3": {
+      "toLiter": 1000,
+      "toGallon": 264.17,
+      "toBarrel": 6.29,
+      "toCubicFeet": 35.31
+    },
+    "mcf": {
+      "toScf": 1000,
+      "toM3": 28.32,
+      "toMMscf": 0.001
+    },
+    "MMscf": {
+      "toScf": 1000000,
+      "toMcf": 1000,
+      "toM3": 28317
+    }
+  },
+  "mass": {
+    "kg": {
+      "toLb": 2.2046,
+      "toTonne": 0.001,
+      "toShortTon": 0.001102,
+      "toLongTon": 0.000984
+    },
+    "lb": {
+      "toKg": 0.4536,
+      "toTonne": 0.000454,
+      "toShortTon": 0.0005
+    },
+    "tonne": {
+      "toKg": 1000,
+      "toLb": 2204.6,
+      "toShortTon": 1.1023,
+      "toLongTon": 0.9842
+    },
+    "shortTon": {
+      "toKg": 907.19,
+      "toTonne": 0.9072,
+      "toLb": 2000
+    },
+    "longTon": {
+      "toKg": 1016.05,
+      "toTonne": 1.016,
+      "toLb": 2240
+    }
+  },
+  "production": {
+    "BOE": {
+      "description": "Barrel of Oil Equivalent",
+      "toBarrelOil": 1,
+      "toMcfGas": 5.8,
+      "toGJ": 6.1,
+      "toMMBtu": 5.8
+    },
+    "mcfGas": {
+      "toBOE": 0.172,
+      "toMMBtu": 1.028
+    }
+  },
+  "emissionRates": {
+    "kgCO2_per_kWh_to_lbCO2_per_MWh": 2204.6,
+    "tCO2_per_MWh_to_kgCO2_per_kWh": 1,
+    "kgCO2_per_MMBtu_to_kgCO2_per_MJ": 0.000948
+  }
+}
