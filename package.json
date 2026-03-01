@@ -1,6 +1,6 @@
 {
   "name": "carbonscope",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "ESG Carbon Footprint Calculator for Oil & Gas Operations",
   "type": "module",
   "scripts": {

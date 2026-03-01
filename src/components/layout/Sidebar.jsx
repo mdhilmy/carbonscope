@@ -3,9 +3,6 @@ import {
   Home,
   LayoutDashboard,
   Calculator,
-  BarChart3,
-  FileText,
-  Building2,
   Wrench,
   Settings,
   HelpCircle,
@@ -15,9 +12,6 @@ const navItems = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { path: '/calculator', label: 'Calculator', icon: Calculator },
-  { path: '/benchmarks', label: 'Benchmarks', icon: BarChart3 },
-  { path: '/reports', label: 'Reports', icon: FileText },
-  { path: '/facilities', label: 'Facilities', icon: Building2 },
   { path: '/tools', label: 'Tools', icon: Wrench },
   { path: '/settings', label: 'Settings', icon: Settings },
   { path: '/help', label: 'Help', icon: HelpCircle },
@@ -52,7 +46,7 @@ export default function Sidebar() {
       {/* Footer */}
       <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-secondary-200 bg-white">
         <p className="text-xs text-secondary-500 text-center">
-          CarbonScope v1.0.0
+          CarbonScope v2.0.0
         </p>
       </div>
     </aside>

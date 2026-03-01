@@ -2,7 +2,32 @@
   "permissions": {
     "allow": [
       "Bash(dir:*)",
-      "Bash(npm create:*)"
+      "Bash(npm create:*)",
+      "Bash(python3:*)",
+      "Bash(node -e \"const fs=require\\(''fs''\\); fs.writeFileSync\\(''d:\\\\\\\\College\\\\\\\\UW-Madison\\\\\\\\Spring 2026\\\\\\\\OilGas Web Project\\\\\\\\CarbonScope\\\\\\\\src\\\\\\\\pages\\\\\\\\DashboardPage.jsx'', fs.readFileSync\\(''d:\\\\\\\\College\\\\\\\\UW-Madison\\\\\\\\Spring 2026\\\\\\\\OilGas Web Project\\\\\\\\CarbonScope\\\\\\\\src\\\\\\\\pages\\\\\\\\DashboardPage.jsx'',''utf8''\\).slice\\(0,5\\)+''...''\\); console.log\\(''ok''\\)\")",
+      "Bash(node --version:*)",
+      "Bash(node -e:*)",
+      "Bash(node:*)",
+      "Bash(printf:*)",
+      "Bash(/tmp/write_wizard.js:*)",
+      "Read(//d/tmp/**)",
+      "Read(//c/Users/user/AppData/Local/Temp/**)",
+      "Bash(where:*)",
+      "Bash(cygpath:*)",
+      "Bash(wslpath:*)",
+      "Bash(WIN_PYTHON=\"C:/Users/user/AppData/Local/Programs/Python/Python312/python.exe\")",
+      "Bash(SCRIPT_PATH=\"C:/Users/user/AppData/Local/Temp/gen_jsx.py\")",
+      "Bash(\"$WIN_PYTHON\" \"$SCRIPT_PATH\")",
+      "Bash(SCRIPT2=\"C:/Users/user/AppData/Local/Temp/gen_tools.py\")",
+      "Bash(\"$WIN_PYTHON\" \"$SCRIPT2\")",
+      "Bash(\"d:\\\\College\\\\UW-Madison\\\\Spring 2026\\\\OilGas:*)",
+      "Bash(Real-time global grid carbon intensity)",
+      "Bash(electricitymaps.com)"
+    ],
+    "additionalDirectories": [
+      "D:\\College\\UW-Madison\\Spring 2026\\OilGas Web Project\\CarbonScope",
+      "\\tmp",
+      "C:\\Users\\user\\AppData\\Local\\Temp"
     ]
   }
 }

@@ -1,10 +1,13 @@
 import { useState } from 'react'
-import { ArrowLeftRight, Search, Calculator } from 'lucide-react'
+import { ArrowLeftRight, Search } from 'lucide-react'
 import Card, { CardTitle, CardDescription } from '../components/common/Card'
 import Input from '../components/common/Input'
 import Select from '../components/common/Select'
 import Button from '../components/common/Button'
+import gwpData from '../data/gwpValues.json'
+import epaFactors from '../data/emissionFactors/epaFactors.json'
 
+// ──────────────────────── Unit Converter data ────────────────────────
 const unitCategories = [
   {
     id: 'energy',
@@ -60,44 +63,109 @@ const unitCategories = [
   },
 ]
 
+// ──────────────────────── Emission Factor Lookup data ────────────────
+const efCategories = [
+  { value: 'stationaryCombustion', label: 'Stationary Combustion' },
+  { value: 'mobileCombustion', label: 'Mobile Combustion' },
+  { value: 'flaring', label: 'Flaring' },
+]
+
+const fuelLabels = {
+  // Stationary
+  naturalGas: 'Natural Gas',
+  distillateFuelOil: 'Distillate Fuel Oil (#2)',
+  residualFuelOil: 'Residual Fuel Oil (#6)',
+  crudeOil: 'Crude Oil',
+  lpg: 'LPG',
+  motorGasoline: 'Motor Gasoline',
+  kerosene: 'Kerosene',
+  petroleumCoke: 'Petroleum Coke',
+  propane: 'Propane',
+  butane: 'Butane',
+  // Mobile
+  gasolinePassengerCar: 'Gasoline – Passenger Car',
+  gasolineLightTruck: 'Gasoline – Light Truck',
+  dieselHeavyTruck: 'Diesel – Heavy Truck',
+  dieselEquipment: 'Diesel – Off-road Equipment',
+  jetFuel: 'Jet Fuel',
+  marineDistillate: 'Marine Distillate',
+  marineResidual: 'Marine Residual',
+}
+
 export default function ToolsPage() {
+  // ── Unit Converter state ──
   const [category, setCategory] = useState('energy')
   const [fromUnit, setFromUnit] = useState('')
   const [toUnit, setToUnit] = useState('')
   const [inputValue, setInputValue] = useState('')
-  const [result, setResult] = useState(null)
+  const [convertResult, setConvertResult] = useState(null)
+
+  // ── GWP Calculator state ──
+  const [gwpVersion, setGwpVersion] = useState('AR5')
+  const [gwpGas, setGwpGas] = useState('CH4_fossil')
+  const [gwpMass, setGwpMass] = useState('')
+  const [gwpResult, setGwpResult] = useState(null)
+
+  // ── Emission Factor Lookup state ──
+  const [efCategory, setEfCategory] = useState('')
+  const [efFuel, setEfFuel] = useState('')
 
   const currentCategory = unitCategories.find((c) => c.id === category)
 
+  // ── Unit Converter logic ──
   const handleConvert = () => {
     if (!inputValue || !fromUnit || !toUnit) return
-
     const value = parseFloat(inputValue)
     if (isNaN(value)) return
-
     if (fromUnit === toUnit) {
-      setResult(value)
+      setConvertResult(value)
       return
     }
-
     const conversion = currentCategory?.conversions[fromUnit]?.[toUnit]
-    if (conversion) {
-      setResult(value * conversion)
-    }
+    if (conversion) setConvertResult(value * conversion)
   }
+
+  // ── GWP Calculator logic ──
+  const gwpGasOptions = Object.keys(gwpData[gwpVersion] || {})
+    .filter((k) => !['source', 'timeHorizon', 'default', 'deprecated', 'description'].includes(k))
+    .map((k) => ({ value: k, label: k.replace(/_/g, ' ') }))
+
+  const handleGwpCalc = () => {
+    const mass = parseFloat(gwpMass)
+    if (isNaN(mass) || mass <= 0) return
+    const gwp = gwpData[gwpVersion]?.[gwpGas]
+    if (gwp === undefined) return
+    setGwpResult({ gas: gwpGas, mass, gwp, co2e: mass * gwp })
+  }
+
+  // ── Emission Factor Lookup logic ──
+  const fuelOptions = efCategory && efCategory !== 'flaring'
+    ? Object.keys(epaFactors[efCategory] || {}).map((k) => ({
+        value: k,
+        label: fuelLabels[k] || k,
+      }))
+    : []
+
+  const efResult = (() => {
+    if (efCategory === 'flaring') return epaFactors.flaring
+    if (efCategory && efFuel && epaFactors[efCategory]?.[efFuel]) {
+      return epaFactors[efCategory][efFuel]
+    }
+    return null
+  })()
 
   return (
     <div className="py-8">
       <h1 className="text-2xl font-bold text-secondary-900 mb-2">Tools</h1>
       <p className="text-secondary-600 mb-6">
-        Utility tools for unit conversion and emission factor lookup
+        Utility tools for unit conversion, GWP calculation, and emission factor lookup
       </p>
 
       <div className="grid lg:grid-cols-2 gap-6">
-        {/* Unit Converter */}
+        {/* ── Unit Converter ── */}
         <Card>
           <CardTitle>Unit Converter</CardTitle>
-          <CardDescription>Convert between common units</CardDescription>
+          <CardDescription>Convert between common energy, volume, and mass units</CardDescription>
 
           <div className="mt-4 space-y-4">
             <div className="flex gap-2">
@@ -108,7 +176,7 @@ export default function ToolsPage() {
                     setCategory(cat.id)
                     setFromUnit('')
                     setToUnit('')
-                    setResult(null)
+                    setConvertResult(null)
                   }}
                   className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${
                     category === cat.id
@@ -146,106 +214,164 @@ export default function ToolsPage() {
               onChange={(e) => setInputValue(e.target.value)}
             />
 
-            <Button onClick={handleConvert} className="w-full">
+            <Button onClick={handleConvert} className="w-full" leftIcon={ArrowLeftRight}>
               Convert
             </Button>
 
-            {result !== null && (
+            {convertResult !== null && (
               <div className="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center">
                 <p className="text-sm text-primary-600">Result</p>
                 <p className="text-2xl font-bold text-primary-700">
-                  {result.toLocaleString(undefined, { maximumFractionDigits: 6 })} {toUnit}
+                  {convertResult.toLocaleString(undefined, { maximumFractionDigits: 6 })} {toUnit}
                 </p>
               </div>
             )}
           </div>
         </Card>
 
-        {/* GWP Calculator */}
+        {/* ── GWP Calculator ── */}
         <Card>
           <CardTitle>GWP Calculator</CardTitle>
-          <CardDescription>
-            Convert greenhouse gases to CO2 equivalent
-          </CardDescription>
+          <CardDescription>Convert greenhouse gas mass to CO2 equivalent</CardDescription>
 
           <div className="mt-4 space-y-4">
-            <div className="bg-secondary-50 rounded-lg p-4">
-              <h4 className="font-medium text-secondary-900 mb-2">
-                Global Warming Potentials (100-year)
-              </h4>
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-secondary-600">CO2</span>
-                  <span className="font-medium">1</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-secondary-600">CH4 (fossil)</span>
-                  <span className="font-medium">30 (AR5) / 29.8 (AR6)</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-secondary-600">N2O</span>
-                  <span className="font-medium">265 (AR5) / 273 (AR6)</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-secondary-600">SF6</span>
-                  <span className="font-medium">23,500 (AR5)</span>
-                </div>
+            <div className="flex gap-2">
+              {['AR5', 'AR6', 'AR4'].map((v) => (
+                <button
+                  key={v}
+                  onClick={() => {
+                    setGwpVersion(v)
+                    setGwpResult(null)
+                  }}
+                  className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${
+                    gwpVersion === v
+                      ? 'bg-primary-100 text-primary-700'
+                      : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
+                  }`}
+                >
+                  {v}
+                </button>
+              ))}
+            </div>
+
+            <Select
+              label="Greenhouse Gas"
+              options={gwpGasOptions}
+              value={gwpGas}
+              onChange={(e) => { setGwpGas(e.target.value); setGwpResult(null) }}
+              placeholder="Select gas"
+            />
+
+            <Input
+              label="Mass (kg)"
+              type="number"
+              placeholder="Enter mass in kg"
+              value={gwpMass}
+              onChange={(e) => setGwpMass(e.target.value)}
+            />
+
+            <Button onClick={handleGwpCalc} className="w-full">
+              Calculate CO2e
+            </Button>
+
+            {gwpResult && (
+              <div className="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center">
+                <p className="text-sm text-primary-600">
+                  {gwpResult.mass.toLocaleString()} kg {gwpResult.gas.replace(/_/g, ' ')} &times; GWP {gwpResult.gwp}
+                </p>
+                <p className="text-2xl font-bold text-primary-700">
+                  {gwpResult.co2e.toLocaleString(undefined, { maximumFractionDigits: 2 })} kg CO2e
+                </p>
+                <p className="text-xs text-primary-500 mt-1">
+                  = {(gwpResult.co2e / 1000).toLocaleString(undefined, { maximumFractionDigits: 4 })} tonnes CO2e
+                </p>
               </div>
-            </div>
+            )}
 
-            <p className="text-sm text-secondary-500">
-              GWP values are from IPCC Assessment Reports. AR5 is commonly used for
-              current reporting. AR6 values are being adopted by some frameworks.
-            </p>
-          </div>
-        </Card>
-
-        {/* Emission Factor Lookup */}
-        <Card className="lg:col-span-2">
-          <CardTitle>Emission Factor Lookup</CardTitle>
-          <CardDescription>
-            Search for emission factors by fuel type and source
-          </CardDescription>
-
-          <div className="mt-4">
-            <div className="grid sm:grid-cols-3 gap-4 mb-4">
-              <Select
-                label="Source"
-                options={[
-                  { value: 'epa', label: 'US EPA' },
-                  { value: 'defra', label: 'UK DEFRA' },
-                  { value: 'ipcc', label: 'IPCC' },
-                ]}
-                placeholder="Select source"
-              />
-              <Select
-                label="Category"
-                options={[
-                  { value: 'stationary', label: 'Stationary Combustion' },
-                  { value: 'mobile', label: 'Mobile Combustion' },
-                  { value: 'flaring', label: 'Flaring' },
-                ]}
-                placeholder="Select category"
-              />
-              <Select
-                label="Fuel Type"
-                options={[
-                  { value: 'naturalGas', label: 'Natural Gas' },
-                  { value: 'diesel', label: 'Diesel' },
-                  { value: 'gasoline', label: 'Gasoline' },
-                ]}
-                placeholder="Select fuel"
-              />
-            </div>
-
-            <div className="bg-secondary-50 rounded-lg p-4">
-              <p className="text-center text-secondary-500">
-                Select options above to view emission factors
+            <div className="bg-secondary-50 rounded-lg p-3">
+              <p className="text-xs text-secondary-500">
+                Source: {gwpData[gwpVersion]?.source || gwpVersion}. 100-year time horizon.
               </p>
             </div>
           </div>
         </Card>
+
+        {/* ── Emission Factor Lookup ── */}
+        <Card className="lg:col-span-2">
+          <CardTitle>Emission Factor Lookup</CardTitle>
+          <CardDescription>Search EPA emission factors by category and fuel type</CardDescription>
+
+          <div className="mt-4">
+            <div className="grid sm:grid-cols-2 gap-4 mb-4">
+              <Select
+                label="Category"
+                options={efCategories}
+                value={efCategory}
+                onChange={(e) => { setEfCategory(e.target.value); setEfFuel('') }}
+                placeholder="Select category"
+              />
+              {efCategory && efCategory !== 'flaring' && (
+                <Select
+                  label="Fuel Type"
+                  options={fuelOptions}
+                  value={efFuel}
+                  onChange={(e) => setEfFuel(e.target.value)}
+                  placeholder="Select fuel"
+                />
+              )}
+            </div>
+
+            {efResult ? (
+              <div className="bg-secondary-50 rounded-lg p-4">
+                {efCategory === 'flaring' ? (
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-secondary-900">Flaring Emission Factors</h4>
+                    <div className="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm">
+                      <Row label="Default CO2 Factor" value={`${efResult.defaultCO2Factor} ${efResult.unit}`} />
+                      <Row label="Combustion Efficiency" value={`${(efResult.defaultCombustionEfficiency * 100).toFixed(0)}%`} />
+                      <Row label="Default HHV" value={`${efResult.defaultHHV} ${efResult.defaultHHVUnit}`} />
+                      <Row label="Methodology" value={efResult.methodology} />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-secondary-900">
+                      {fuelLabels[efFuel] || efFuel}
+                    </h4>
+                    <div className="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm">
+                      <Row label="CO2" value={`${efResult.co2} ${efResult.unit}`} />
+                      <Row label="CH4" value={`${efResult.ch4} ${efResult.unit}`} />
+                      <Row label="N2O" value={`${efResult.n2o} ${efResult.unit}`} />
+                      {efResult.hhv && (
+                        <Row label="HHV" value={`${efResult.hhv} ${efResult.hhvUnit}`} />
+                      )}
+                    </div>
+                    <p className="text-xs text-secondary-400 mt-2">
+                      Source: {epaFactors.metadata.source}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="bg-secondary-50 rounded-lg p-4">
+                <p className="text-center text-secondary-500 flex items-center justify-center gap-2">
+                  <Search className="w-4 h-4" />
+                  Select a category{efCategory !== 'flaring' ? ' and fuel type' : ''} above to view emission factors
+                </p>
+              </div>
+            )}
+          </div>
+        </Card>
       </div>
+    </div>
+  )
+}
+
+function Row({ label, value }) {
+  return (
+    <div className="flex justify-between py-0.5">
+      <span className="text-secondary-600">{label}</span>
+      <span className="font-medium text-secondary-900">{value}</span>
     </div>
   )
 }

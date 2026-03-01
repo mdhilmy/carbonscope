@@ -122,9 +122,9 @@ export default function HelpPage() {
                   <span className="text-primary-700 font-medium">1</span>
                 </div>
                 <div>
-                  <p className="font-medium text-secondary-900">Add a Facility</p>
+                  <p className="font-medium text-secondary-900">Run a Calculation</p>
                   <p className="text-sm text-secondary-600">
-                    Go to Facilities and create your first facility with basic information
+                    Go to the Calculator page, choose Simple or Expert mode, then enter your activity data for Scope 1, 2, and optionally Scope 3.
                   </p>
                 </div>
               </div>
@@ -133,9 +133,9 @@ export default function HelpPage() {
                   <span className="text-primary-700 font-medium">2</span>
                 </div>
                 <div>
-                  <p className="font-medium text-secondary-900">Choose Calculation Mode</p>
+                  <p className="font-medium text-secondary-900">Save to a Facility</p>
                   <p className="text-sm text-secondary-600">
-                    Select Simple mode for quick estimates or Expert mode for detailed analysis
+                    After calculating, use "Save to Facility" to store results. You can create a new facility or save to an existing one.
                   </p>
                 </div>
               </div>
@@ -144,9 +144,9 @@ export default function HelpPage() {
                   <span className="text-primary-700 font-medium">3</span>
                 </div>
                 <div>
-                  <p className="font-medium text-secondary-900">Enter Activity Data</p>
+                  <p className="font-medium text-secondary-900">View the Dashboard</p>
                   <p className="text-sm text-secondary-600">
-                    Input fuel consumption, electricity usage, and other emission sources
+                    The Dashboard shows all your facilities as cards. Green badge = has calculation data, gray = empty. Click a card to view full results, generate PDF reports, or delete.
                   </p>
                 </div>
               </div>
@@ -155,9 +155,9 @@ export default function HelpPage() {
                   <span className="text-primary-700 font-medium">4</span>
                 </div>
                 <div>
-                  <p className="font-medium text-secondary-900">Review & Export</p>
+                  <p className="font-medium text-secondary-900">Benchmark &amp; Export</p>
                   <p className="text-sm text-secondary-600">
-                    View results, compare to benchmarks, and generate reports
+                    Use "Run Benchmark" on the Dashboard to compare facilities against industry averages. Export results as PDF, Markdown, CSV, or JSON from the Calculator results page.
                   </p>
                 </div>
               </div>

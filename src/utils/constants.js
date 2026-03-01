@@ -1,7 +1,7 @@
 // Application constants
 
 export const APP_NAME = 'CarbonScope'
-export const APP_VERSION = '1.0.0'
+export const APP_VERSION = '2.0.0'
 
 // GWP Version options
 export const GWP_VERSIONS = {
@@ -97,9 +97,6 @@ export const NAV_ITEMS = [
   { path: '/', label: 'Home', icon: 'Home' },
   { path: '/dashboard', label: 'Dashboard', icon: 'LayoutDashboard' },
   { path: '/calculator', label: 'Calculator', icon: 'Calculator' },
-  { path: '/benchmarks', label: 'Benchmarks', icon: 'BarChart3' },
-  { path: '/reports', label: 'Reports', icon: 'FileText' },
-  { path: '/facilities', label: 'Facilities', icon: 'Building2' },
   { path: '/tools', label: 'Tools', icon: 'Wrench' },
   { path: '/settings', label: 'Settings', icon: 'Settings' },
   { path: '/help', label: 'Help', icon: 'HelpCircle' },

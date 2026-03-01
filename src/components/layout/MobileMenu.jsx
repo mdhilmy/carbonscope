@@ -3,7 +3,7 @@ import {
   Home,
   LayoutDashboard,
   Calculator,
-  BarChart3,
+  Wrench,
   Settings,
 } from 'lucide-react'
 
@@ -12,7 +12,7 @@ const mobileNavItems = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { path: '/calculator', label: 'Calculator', icon: Calculator },
-  { path: '/benchmarks', label: 'Benchmarks', icon: BarChart3 },
+  { path: '/tools', label: 'Tools', icon: Wrench },
   { path: '/settings', label: 'Settings', icon: Settings },
 ]
 
