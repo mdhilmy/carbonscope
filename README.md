@@ -242,7 +242,7 @@ API keys are stored in localStorage. Features that require API keys display a wa
 ## Deployment
 
 The app is deployed to GitHub Pages at:
-`https://mdhilmy.github.io/CarbonScope/`
+`https://mdhilmy.github.io/carbonscope/`
 
 HashRouter is used (not BrowserRouter) because GitHub Pages does not support server-side routing. The `base` path in `vite.config.js` must match the repository name.
 
